@@ -1,15 +1,15 @@
 class WorkspaceController < ModelController
   def index
-    self.model = :page
+    self.model = :store
   end
 
   def add_user
-    page._users << _new_user.cur
+    store._users << _new_user.cur
     self._new_user = {}
   end
 
   def remove_user(user)
-    page._users.delete(user)
+    store._users.delete(user)
   end
 
    private
