@@ -28,7 +28,17 @@ Workspace
 
 
 </form>
+
+
 {#if _current_user}
   <h2>{store._current_user._username}'s Text Editor</h2>
   <textarea>{_current_user._pad}</textarea>
 {/}
+
+
+
+<div id="editor">{_current_user._pad}</div>
+<script src="/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+</script>
