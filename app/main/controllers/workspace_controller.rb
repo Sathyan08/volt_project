@@ -1,6 +1,8 @@
 class WorkspaceController < ModelController
   def index
     self.model = :store
+    self._current_user = _users[params._index.to_i]
+    # self._current_todo = _todos[params._index.to_i]
   end
 
   def add_user

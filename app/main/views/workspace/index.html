@@ -1,12 +1,16 @@
 <:Title>
 Workspace
 
+
+
 <:Body>
   <h1>{store._users.length} - Users are Online</h1>
 
 <table class="table" style="width: auto;">
 {#each store._users as user}
-  <tr>
+  <tr
+    e-click="params._index = index"
+    class="{#if params._index == index}selected{/}">
     <td>{user._username}</td>
     <td><button e-click="remove_user(user)">X</button></td>
     </tr>
@@ -22,4 +26,9 @@ Workspace
     <input class="form-control" type="text" value="{_new_user._username}" />
   </div>
 
+
 </form>
+{#if _current_user}
+  <h2>{store._current_user._username}'s Text Editor</h2>
+  <textarea>{_current_user._pad}</textarea>
+{/}
